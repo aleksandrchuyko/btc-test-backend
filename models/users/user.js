@@ -27,6 +27,10 @@ const userSchema = new Schema(
       required: [true, "Email is required"],
       unique: true,
     },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "owner",
+    },
   },
   { timestamps: true, versionKey: false }
 );
@@ -42,6 +46,7 @@ const addSchema = Joi.object({
 });
 
 const updateSchema = Joi.object({
+  name: Joi.string().required(),
   email: Joi.string().pattern(regexp.email).required(),
   password: Joi.string().min(8).required(),
 });
