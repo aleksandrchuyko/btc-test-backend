@@ -3,6 +3,7 @@ const { RequestError } = require("../../utils");
 
 const updateById = async (req, res) => {
   const { userId } = req.params;
+  console.log(userId)
   const result = await User.findByIdAndUpdate(userId, req.body, {
     new: true,
   });
