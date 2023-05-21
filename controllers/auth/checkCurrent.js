@@ -1,5 +1,5 @@
 const checkCurrent = async (req, res) => {
-  const { email } = req.user;
+  const { email } = req.owner;
   
   res.status(200).json({
     email,
