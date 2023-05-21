@@ -25,7 +25,6 @@ const userSchema = new Schema(
       type: String,
       match: regexp.email,
       required: [true, "Email is required"],
-      unique: true,
     },
     owner: {
       type: Schema.Types.ObjectId,
