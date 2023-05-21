@@ -1,4 +1,4 @@
-const { User } = require("../../models/users/user");
+const { User } = require('../../models/users/user');
 
 const getAll = async (req, res) => {
   const owner = req.owner._id;
@@ -7,14 +7,13 @@ const getAll = async (req, res) => {
   const skip = (page - 1) * limit;
 
   const queryParams = { owner };
-  if (favorite === "true") {
+  if (favorite === 'true') {
     queryParams.favorite = true;
   }
-  console.log(queryParams);
-  const result = await User.find(queryParams, "-createdAt -updatedAt", {
+  const result = await User.find(queryParams, '-createdAt -updatedAt', {
     skip,
     limit,
-  }).populate("owner", "email");
+  }).populate('owner', 'email');
   res.status(200).json(result);
 };
 
