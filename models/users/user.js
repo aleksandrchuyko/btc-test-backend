@@ -4,7 +4,7 @@ const Joi = require("joi");
 const { handleMongoSaveError } = require("../../utils");
 
 const regexp = {
-  name: /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
+  name: /^[a-zA-Zа-яА-Яа-їґЄ-ЯҐ]+(([' -][a-zA-Zа-яА-Яа-їґЄ-ЯҐ ])?[a-zA-Zа-яА-Яа-їґЄ-ЯҐ]*)*$/,
   email:
     /^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/,
 };
